@@ -18,10 +18,17 @@ function increaseRankBy(n) {
   }
 }
 
-function deepestChild() {
-  
-  let element = document.querySelectorAll('div #grand-node');
-  
-  return document.querySelector(element);
 
+function deepestChild() {
+  let element = document.getElementById('grand-node');
+  let nextNode = element.children[0]
+
+  while (nextNode) {
+    element = nextNode
+    nextNode = element.children[0]
+  }
+
+  return element
 }
+
+
